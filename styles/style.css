@@ -33,7 +33,7 @@ background-size: 10px 10px;
 .header-img {
   height: 85vh;
   background-image: linear-gradient(#ffb7b7cf 15%, #fff9f395 100%),
-    url(background.jpg);
+    url(/images/background.jpg);
 
   background-size: cover;
   background-position: center;
@@ -41,10 +41,10 @@ background-size: 10px 10px;
   background-attachment: fixed;
   margin-top: 0;
   margin-right: 0;
-  -webkit-mask-image: url(circlemask.svg);
+  -webkit-mask-image: url(/images/circlemask.svg);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: cover;
-  mask-image: url(circlemask.svg);
+  mask-image: url(/images/circlemask.svg);
   mask-repeat: no-repeat;
   mask-size: cover;
 }
