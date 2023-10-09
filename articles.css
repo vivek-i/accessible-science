@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+  background-size: cover;
+  background: rgb(229,228,255);
+  background: linear-gradient(90deg, rgba(229,228,255,1) 0%, rgba(255,224,211,1) 100%); 
+    width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+#titleSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+
+  width: 100%;
+}
+#titleSection > h1 {
+  width: 100%;
+  color: rgb(48, 48, 48);
+  font-size: 90px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  margin: none;
+  padding: none;
+  display: block;
+}
+
+#selectSection {
+  display: flex;
+  justify-content: center;
+}
+
+.selectButton {
+  display: flex;
+  justify-content: center;
+  transition: all 1s;
+  padding: 5px 50px;
+  background-color: rgba(255, 255, 255, 0.304);
+  border-radius: 30px;
+  margin: none;
+  padding: none;
+  display: block;
+  transition: all 1s;
+  width: 30%;
+  max-width: 200px;
+  height: 35px;
+}
+
+.selectButton > h2 {
+  color: rgb(48, 48, 48);
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+}
+
+.topicFilters {
+  transition: all 1s;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 1.5s linear;
+}
+
+.selectButton:hover {
+  height: 300px;
+}
+
+.topicFilters h2 {
+  color: rgb(48, 48, 48);
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+}
+
+.topicFilters h2:hover {
+  cursor: pointer;
+}
+
+.selectButton:hover .topicFilters {
+  visibility: visible;
+  opacity: 1;
+}
+
+#articleSection {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 150px;
+  z-index: 1000;
+}
+
+#articleSection a {
+  color: unset;
+  margin: unset;
+  padding: unset;
+}
+
+.articleContainer {
+  transition: transform 0.2s;
+  width: 95%;
+  max-width: 900px;
+  padding-bottom: 30px;
+  border-radius: 30px;
+  margin: auto;
+  margin-bottom: 60px;
+  z-index: 100;
+
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.119);
+  backdrop-filter: blur(5px);
+}
+
+.articleContainer:hover {
+  transform: scale(1.1) !important;
+  cursor: pointer;
+}
+
+.articleContainer h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 30px;
+  margin-top: 15px;
+  margin-left: 2.5%;
+  text-align: left;
+  float: left;
+  color: rgb(99, 99, 99);
+  display: inline-block;
+}
+
+.articleContainer p {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  margin-top: 0px;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  width: 70%;
+  color: rgb(129, 129, 129);
+  display: inline-block;
+}
+
+.articleContainer img {
+  width: 20%;
+  height: 150px;
+  object-fit: cover;
+  display: inline-block;
+}
+

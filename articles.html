@@ -1,0 +1,132 @@
+    <html>
+        <head>
+            <title>Articles - Accessible Science</title>
+            <link href="articles.css" rel="stylesheet" type="text/css">
+            <link href="common.css" rel="stylesheet" type="text/css">
+            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script src="articles.js"></script>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@600&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <link rel="icon" href="logo.png">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+        </head>
+
+        <body>
+            <div id="loader">
+                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            </div>
+            <header>
+                <div id="myNav" class="overlay">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="overlay-content">
+                      <a href="index.html">Home</a>
+                      <a href="articles.html">Articles</a>
+                      <a href="signUp.html">Sign Up</a>
+                      <a href="team.html">Our Team</a>
+                    </div>
+                  </div>
+                  <div class="menuButton">
+                    <span style="font-size:60px;cursor:pointer; margin-left: 15px;" onclick="openNav()">&#9776;</span>
+                  </div>
+            
+            
+                    <ul class="main-nav">
+                        <img src="logo.png">
+                        <li data-text="Home"><a href="index.html">Home</a></li>
+                        <li data-text="Articles"><a href="articles.html">Articles</a></li>
+                        <li data-text="Sign Up"><a href="signUp.html">Sign Up</a></li>            
+                        <li data-text="Our Team"><a href="team.html">Our Team</a></li>
+        
+                    </ul>
+                </div>                                            
+            </header>
+            <div class="spacer">
+                &nbsp;
+            </div>
+            <section id="titleSection">
+                <h1 id="articlesHeading">Articles</h1>
+                </br>
+            </section>
+            <!-- <section id="selectSection">
+                <div class="selectButton">
+                    <h2>Filter by Topic &#x2193;</h2>
+                    <div class="topicFilters">
+                        <h2 onclick="filterTopic('life')">Life</h2>
+                        <h2 onclick="filterTopic('earth')">Earth</h2>
+                        <h2 onclick="filterTopic('space')">Space</h2>
+                        <h2 onclick="filterTopic('technology')">Technology</h2>
+                        <h2 onclick="filterTopic('physics')">Physics</h2>
+                        <h2 onclick="filterTopic('medicine')">Medicine</h2>
+                        <h2 onclick="filterTopic('covid')">Covid-19</h2>
+                    </div>
+                </div>
+            </section> -->
+            <section id="articleSection">
+                
+            </section>
+            
+        </body>
+        <script>
+            function filterTopic(topic)
+            {
+                window.location.href="/articles.html?filter=" + topic
+            }
+            function openNav() {
+              document.getElementById("myNav").style.width = "100%";
+            }
+            
+            function closeNav() {
+              document.getElementById("myNav").style.width = "0%";
+            }
+            AOS.init()
+            // loadArticles()
+
+            $(".articleContainer").click(function() {
+                console.log("here")
+                window.location = $(this).find("a").attr("href"); 
+                return false;
+            });
+
+
+
+            const firebaseConfig = {
+                apiKey: "AIzaSyAn0pgj-lTPpLyRwlfpAkqaD2UlDN8C41c",
+                authDomain: "website-f06ac.firebaseapp.com",
+                databaseURL: "https://website-f06ac-default-rtdb.firebaseio.com",
+                projectId: "website-f06ac",
+                storageBucket: "website-f06ac.appspot.com",
+                messagingSenderId: "155906238269",
+                appId: "1:155906238269:web:c489e7bcd7948fe1470754",
+                measurementId: "G-K6J52QN4JE"
+            };
+
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+            var database = firebase.database();
+
+            const dbRef = firebase.database().ref();
+            dbRef.child("articles").get().then((snapshot) => {
+                if (snapshot.exists()) {
+                    snapshot.forEach((childSnapshot) => {
+                        var articleData = childSnapshot.val();
+                        console.log(articleData.description);
+                        addArticle(articleData.title, articleData.imageLink, articleData.description, childSnapshot.key);
+                    });
+                    const loader = document.getElementById("loader")
+                    loader.style.display = "none";
+                } else {
+                    console.log("No data available");
+                }
+                }).catch((error) => {
+                console.error(error);
+            });
+
+        </script>
+    </html>

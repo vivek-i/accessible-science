@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 30px;
+}
+
+.button {
+  background-color: #ffffff;
+  width: 80%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: black;
+  font-size: 20px;
+  margin-top: 20px;
+  border-radius: 30px;
+  border-color: rgba(0, 0, 0, 0);
+  outline: none;
+  box-shadow: none;
+  transition: all 0.5s;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #9ff7f7;
+  box-shadow: 0px 0px 15px 5px #d0ffff;
+  transition: all 0.5s;
+}
+
+.checkBoxContainer {
+  text-align: unset;
+  float: left;
+  display: inline-flex;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 10px;
+}
+
+.emailCheckBox {
+  width: 15px;
+  height: 15px;
+  margin-left: 3px;
+  margin-top: 3px;
+  margin-right: 10px;
+}
+
+p {
+  font-size: 15px;
+  font-family: "Poppings", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: rgb(63, 63, 63);
+}
+
+body {
+  /*background: linear-gradient(-225deg, #c17ad5 15%, #618ede 100%);*/
+
+  padding-bottom: 100px;
+  margin-bottom: 100px;
+
+  /* background-image: linear-gradient(#2d2c2ed6, #2e2e2ed1), url("aboutBG.jpeg"); */
+  /* background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  background-attachment: fixed; */
+  background: rgb(229,228,255);
+  background: linear-gradient(90deg, rgba(229,228,255,1) 0%, rgba(255,224,211,1) 100%); 
+}
+
+.signUpContainer {
+  transform: translateY(100px);
+  /* background-color: white; */
+  width: 80%;
+  margin: auto;
+  /* border-radius: 30px; */
+  max-width: 700px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  /* box-shadow: 5px 10px rgb(74, 74, 74); */
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.119);
+  backdrop-filter: blur(5px);
+}
+
+input {
+  background-color: red;
+  color: #000000;
+  margin-top: 20px;
+  width: 80%;
+  background-color: rgba(55, 55, 55, 0.1);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  padding: 12px 20px;
+  margin-left: 10%;
+  border-radius: 30px;
+  border-width: 0px;
+  border-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+::placeholder {
+  color: rgb(101, 101, 101);
+}
+
+input:hover {
+  background-color: rgba(55, 55, 55, 0.2);
+  transform: scale(1.05);
+}
+
+h1 {
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 40px;
+  float: left;
+  color: rgb(55, 55, 55);
+
+  padding-left: 5%;
+}
+
+.alert {
+  margin-top: 100px;
+  width: 80%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  background-color: #69f094;
+  text-align: center;
+  margin-left: 10%;
+  border-radius: 30px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: none;
+}
+
+input {
+  border-color: black;
+}
+
+@media (pointer: none), (pointer: coarse) {
+  .checkBoxContainer {
+    margin-top: 20px;
+  }
+
+  .emailCheckBox {
+    width: 40px;
+    height: 40px;
+    margin-left: 6px;
+    margin-top: 6px;
+    margin-right: 20px;
+  }
+
+  p {
+    font-size: 25px;
+  }
+
+  .main-nav {
+    display: none;
+    visibility: hidden;
+  }
+  h1 {
+    font-size: 80px;
+  }
+  .signUpContainer {
+    width: 90%;
+
+    max-width: none;
+    border-radius: 60px;
+  }
+
+  input {
+    font-size: 30px;
+    margin-top: 40px;
+    border-radius: 80px;
+  }
+
+  ::placeholder {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+  font-style: normal;
+    font-size: 30px;
+  }
+  .button {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 40px;
+    border-radius: 80px;
+  }
+  .alert {
+    font-size: 30px;
+    margin-top: 200px;
+  }
+  .menuButton {
+    display: inline;
+  }
+  .overlay a {
+    font-size: 60px;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .main-nav {
+    display: none;
+    visibility: hidden;
+  }
+  h1 {
+    font-size: 80px;
+  }
+  .signUpContainer {
+    width: 90%;
+
+    max-width: none;
+    border-radius: 60px;
+  }
+
+  input {
+    font-size: 40px;
+    margin-top: 50px;
+    border-radius: 30px;
+    font-size: 30px;
+  }
+
+  ::placeholder {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+  font-style: normal;
+  }
+  .button {
+    margin-top: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 40px;
+    border-radius: 80px;
+  }
+  .alert {
+    font-size: 30px;
+    margin-top: 200px;
+  }
+  .menuButton {
+    display: inline;
+  }
+  .overlay a {
+    font-size: 60px;
+  }
+  .checkBoxContainer {
+    margin-top: 20px;
+  }
+
+  .emailCheckBox {
+    width: 40px;
+    height: 40px;
+    margin-left: 6px;
+    margin-top: 6px;
+    margin-right: 20px;
+  }
+
+  p {
+    font-size: 25px;
+  }
+}
