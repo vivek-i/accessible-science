@@ -1,4 +1,6 @@
 # Accessible Science
+
+![Image](https://github.com/vivek-i/accessible-science/blob/main/images/homePage.png?raw=true)
 [accessiblescience.net](https://accessiblescience.net)
 
 ## About
